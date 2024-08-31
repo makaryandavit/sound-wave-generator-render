@@ -2,10 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-.marks {
-  position: relative;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.marks::after {
-  content: url("@/public/images/arrowBottom.svg");
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+body{
+  overflow-x: hidden !important;
+}
+
+.header-shadow{
+  box-shadow: 0 6px 6px rgba(0,82,224,.1);
+}
+
+.dropdown-shadow{
+  box-shadow: 0 3px 24px #252E4833;
+}
+
+.marks {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+
+.footer-background{
+  background-color: #FAF8F4;
+}
+
+.marks:hover::after{
+  transform: rotate(180deg);
+}
+
+.custom-height-mobile-menu{
+  height: calc(100vh - 9.3vh);
+}
+
+.custom-text-color{
+  color: #545f7e;
+}
+
+.custom-btn-styles{
+  color: #252E48;
+  border: 1px solid #C1C9E0;
+}
+
+.custom-backgroundMenu{
+  background-color: rgba(37,46,72,.4);
+}
+
+.custom-camera-bgcolor{
+  background-color: #EEF5FF;
+}
+
+@media screen and (max-width: 1195px){
+  .marks::after{
+    content: "";
+  }
 }

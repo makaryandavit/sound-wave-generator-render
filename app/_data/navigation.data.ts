@@ -3,8 +3,9 @@ import { NavigationItem } from "../_types/navigation";
 export const navigationItems: NavigationItem[] = [
   {
     id: Math.random() * Math.random(),
-    label: "Video",
+    label: "Videos",
     url: "/",
+    isDropdown: true,
   },
   {
     id: Math.random() * Math.random(),
@@ -32,3 +33,4 @@ export const navigationItems: NavigationItem[] = [
     url: "/",
   },
 ];
+

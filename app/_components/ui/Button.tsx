@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export interface ButtonProps {
@@ -11,7 +12,9 @@ const Button: React.FC<ButtonProps> = (props): JSX.Element => {
 
   return (
     <div className={`${className} flex justify-center items-center`}>
+      <Link href="/">
       {value}
+      </Link>
     </div>
   );
 };
