@@ -1,3 +1,9 @@
+import { Section1, Section2, Section3 } from "./_components/_sections";
+
 export default function Home() {
-  return <div className="w-full h-[81vh]"></div>;
+  return <>
+    <Section1 />
+    <Section2 />
+    <Section3 />
+  </>
 }

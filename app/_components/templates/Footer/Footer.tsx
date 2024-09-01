@@ -2,7 +2,8 @@ import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
-  return <footer className="w-full h-auto min-h-[70px]  gap-5 flex footer-background justify-around items-center flex-wrap">
+  return <footer className="w-full h-auto min-h-[70px] p-5  gap-5 flex footer-background justify-around items-center flex-wrap">
+    <div className="w-full h-[20px] border-b"></div>
     <Image  src="/images/logoBlack.svg" alt="logoBlack" width={180} height={50}/>
     <p>Renderforest © 2013 - 2024</p>
     <div className="w-[250px] h-[40px] flex justify-evenly items-center">

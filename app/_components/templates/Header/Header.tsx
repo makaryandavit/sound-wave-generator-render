@@ -106,7 +106,7 @@ const Header = () => {
                   <div className="w-full h-[20%]  flex justify-center items-center">
                     <div className="w-[180px] h-[45px] flex montserrat justify-center items-center gap-2 font-bold text-[#3271E6]">
                     Browse More 
-                    <Image src="/images/arrowRight.svg" alt="arrowRight" width={15} height={15}/>
+                    <Image src="/images/arrowRight.svg" className="" alt="arrowRight" width={15} height={15}/>
                     </div>
                   </div>
                 </div> : ''

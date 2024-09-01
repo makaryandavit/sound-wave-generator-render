@@ -16,7 +16,11 @@ const config: Config = {
       screens: {
         'mobile': '320px',
         'tablet': '650px',
+        'customSize' : '1000px',
         'notebook': '1195px'
+      },
+      fontSize: {
+        'titleSize' : '3.5rem'
       }
     },
   },
