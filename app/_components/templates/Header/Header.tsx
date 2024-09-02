@@ -6,12 +6,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../../ui";
 import { dropdown1Items1, dropdown1Items2 } from "@/app/_data/dropdown.data";
+import { videoMenuItems1, videoMenuItems2 } from "@/app/_data/videoMenu.data";
 
 const Header = () => {
   const [mobileMenuList, setMobileMenuList] = useState(false);
-
   const [mobileMenu, setMobileMenu] = useState(false);
-
+  const [videoMenu, setVideoMenu] = useState(false);
   useEffect(() => {
     if (mobileMenu) {
       document.body.classList.add("freeze", "scroll-off");
@@ -164,6 +164,8 @@ const Header = () => {
           className="absolute right-[3%] tablet: w-[30px] h-[30px] notebook:hidden custom-burger cursor-pointer"
           onClick={() => {
             setMobileMenu(!mobileMenu);
+            setMobileMenuList(false);
+            setVideoMenu(false);
           }}
         >
           <div className="custom-list w-full h-full flex flex-col justify-center items-center relative">
@@ -180,7 +182,7 @@ const Header = () => {
           </div>
         </div>
         <div
-          className={`z-50 w-[305px] flex flex-col gap-[10px] items-center custom-height-mobile-menu bg-white absolute right-0 top-[9vh] duration-[.1s] transform ${
+          className={`z-50 w-[305px] flex flex-col gap-[10px] items-center overflow-hidden custom-height-mobile-menu bg-white absolute right-0 top-[9vh] duration-[.1s] transform ${
             mobileMenu ? `translate-x-[3px]` : `translate-x-[310px]`
           } notebook:hidden`}
         >
@@ -208,7 +210,12 @@ const Header = () => {
               }`}
             >
               <ul className="w-full h-auto flex flex-col mobileMenuBackground">
-                <li className="cursor-pointer w-full h-[60px] border-b flex justify-start pl-3 items-center gap-[10px] relative text-[#545F7E]">
+                <li
+                  className="cursor-pointer w-full h-[60px] border-b flex justify-start pl-3 items-center gap-[10px] relative text-[#545F7E]"
+                  onClick={() => {
+                    setVideoMenu(!videoMenu);
+                  }}
+                >
                   <Image
                     src="./images/camera.svg"
                     alt=""
@@ -344,6 +351,51 @@ const Header = () => {
             className="w-[85%] h-[45px] border-gray-400 border rounded-[5px] bg-transparent custom-btn-styles cursor-pointer"
             value="Sign In"
           />
+          <div
+            className={`w-full h-full bg-white absolute duration-[.2s]  top-0 left-0 ${
+              videoMenu ? "translate-x-[0%]" : "translate-x-[105%]"
+            }`}
+          >
+            <div className="w-full h-[60px] flex justify-center items-center relative mobileMenuBackground">
+              <Image
+                src="./images/arrowBack.svg"
+                alt=""
+                width={35}
+                height={35}
+                className="absolute left-[5%]"
+                onClick={() => {
+                  setVideoMenu(false);
+                }}
+              />
+              Create Video
+            </div>
+            <div className="w-full videoMenuHeight  overflow-y-scroll">
+              <ul className="w-full flex flex-col gap-[10px] p-[15px] pl-[20px] border-b">
+                <p className="text-[#7683A8] font-bold">Categories</p>
+                {videoMenuItems1.map((item) => (
+                  <li key={item.id} className="text-[#252E48]">
+                    {item.label}
+                  </li>
+                ))}
+              </ul>
+              <ul className="w-full flex flex-col gap-[10px] p-[15px] pl-[20px]">
+                <p className="text-[#7683A8] font-bold">Featured</p>
+                {videoMenuItems2.map((item) => (
+                  <li key={item.id}>{item.label}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="w-full h-[50px]  flex justify-center items-center gap-[10px] menu-shadow">
+              Browse More
+              <Image
+                src="/images/arrowRight.svg"
+                className=""
+                alt="arrowRight"
+                width={15}
+                height={15}
+              />
+            </div>
+          </div>
         </div>
         <div
           className={`z-20 w-[100vw] custom-height-mobile-menu custom-backgroundMenu top-[9vh] absolute ${

@@ -129,6 +129,15 @@ body {
   background-color: #f5f8fe;
 }
 
+.videoMenuHeight {
+  height: calc(100vh - 9vh - 60px - 100px);
+}
+
+.menu-shadow {
+  box-shadow: 0 -6px 6px rgba(0, 82, 224, 0.1);
+}
+
+
 @keyframes soundWave {
   from {
     transform: scaleY(0.5);

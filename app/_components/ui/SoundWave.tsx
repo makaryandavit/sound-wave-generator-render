@@ -10,7 +10,7 @@ const SoundWave = () => {
         {Array.from({ length: 90 }).map((item, index) => (
           <span
             key={index}
-            className="w-[3px] h-[30px] bg-white block soundWave"
+            className="w-[3px] h-[30px] bg-white opacity-[.8] block soundWave"
             style={{
               animationDuration: `${0.7 + Math.random() * (1.5 - 0.7)}s`,
             }}
